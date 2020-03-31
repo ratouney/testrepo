@@ -21,7 +21,7 @@ app.post("/webhooks/github", function (req, res) {
     // If the commit has been made on the master branch, do stuff
     if (req.body.ref.indexOf('master') > -1) {
         console.log("Yup, it's pushed to master, do the thing !");
-        cmd('deploy_script').then(output => {
+        cmd('deploy_script.sh').then(output => {
             console.log("Script has been run !");
             status.data = output;
             status.data = Date.now();
