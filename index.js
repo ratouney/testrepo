@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
-let status = {lastUpdate: null, data: null, version: 1.1};
+let status = {lastUpdate: null, data: null, version: 1.2};
 
 app.get("/webhooks/github", function(req, res) {
     res.json(status);
@@ -21,7 +21,7 @@ app.post("/webhooks/github", function (req, res) {
     // If the commit has been made on the master branch, do stuff
     if (req.body.ref.indexOf('master') > -1) {
         console.log("Yup, it's pushed to master, do the thing !");
-        cmd('deploy_script.sh').then(output => {
+        cmd('./deploy_script.sh').then(output => {
             console.log("Script has been run !");
             status.data = output;
             status.data = Date.now();
