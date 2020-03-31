@@ -13,7 +13,7 @@ app.get("/webhooks/github", function(req, res) {
 })
 
 app.post("/webhooks/github", function (req, res) {
-    console.log("Received request :", req);
+    console.log("Received request body :", req.body);
     temp = req;
 
 })
