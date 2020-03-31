@@ -6,7 +6,7 @@ app.get("/webhooks/github", function(req, res) {
 })
 
 app.post("/webhooks/github", function (req, res) {
-    console.log("Received update :", req.body);
+    console.log("Received reference :", req.body.ref);
 
 })
 
