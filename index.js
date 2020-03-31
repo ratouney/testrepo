@@ -1,12 +1,15 @@
 var express = require("express");
 var app = express();
 
+let temp = {msg: "Nothing yet"};
+
 app.get("/webhooks/github", function(req, res) {
-    res.json({msg: "This is the get request yo retard"});
+    res.json(temp);
 })
 
 app.post("/webhooks/github", function (req, res) {
-    console.log("Received reference :", req.body.ref);
+    console.log("Received request :", req);
+    temp = req;
 
 })
 
