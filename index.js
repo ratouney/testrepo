@@ -14,7 +14,12 @@ app.get("/webhooks/github", function(req, res) {
 
 app.post("/webhooks/github", function (req, res) {
     console.log("Received request body :", req.body);
-    temp = req;
+    temp = req.body;
+
+    // If the commit has been made on the master branch, do stuff
+    if (req.body.ref.indexOf('master') > -1) {
+        console.log("Yup, it's pushed to master, do the thing !");
+    }
 
 })
 
