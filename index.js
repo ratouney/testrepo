@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
-let status = {lastUpdate: null, data: null, version: 1.2};
+let status = {lastUpdate: null, data: null, version: 1.3};
 
 app.get("/webhooks/github", function(req, res) {
     res.json(status);
