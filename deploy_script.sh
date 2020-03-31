@@ -1,3 +1,6 @@
+echo "Going to repo"
+cd /root/testrepo
+
 echo "Pulling repo"
 git pull
 
@@ -8,4 +11,4 @@ echo "Updating packages"
 npm install
 
 echo "Restarting app"
-pm2 start --name "GithubAutoDeployer" node index.js
+pm2 start --name "GithubAutoDeployer" index.js
