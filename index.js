@@ -2,7 +2,7 @@ var express = require("express");
 
 var app = express();
 
-const version = 5;
+const version = 6;
 
 
 app.get("/", function(req, res) {
